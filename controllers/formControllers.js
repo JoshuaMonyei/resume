@@ -6,7 +6,7 @@ exports.submit = async (req, res) => {
     const {name, email, message} = req.body;
     let errors = [];
     // check required fields
-    if (!name || !email || !message) {
+    if (!name && !email && !message) {
         errors.push({msg: "Please fill all required fields"});
     }
     if (errors.length > 0) {
